@@ -1,0 +1,32 @@
+{
+  "name": "remark-link-escape",
+  "version": "1.0.0",
+  "description": "remark-lint rule to warn when a newline at the end of a file is missing",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --collectCoverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/computamike/remark-link-escape.git"
+  },
+  "keywords": [
+    "remake",
+    "lint",
+    "rule",
+    "remark-link-escape",
+    "link",
+    "escape"
+  ],
+  "author": "Mike Hingley <computa_mike@hotmail.com> (https://github.com/computamike)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/computamike/remark-link-escape/issues"
+  },
+  "homepage": "https://github.com/computamike/remark-link-escape#readme",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "remark": "^13.0.0",
+    "unified-lint-rule": "^1.0.6"
+  }
+}
