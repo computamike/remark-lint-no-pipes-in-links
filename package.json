@@ -1,5 +1,5 @@
 {
-  "name": "remark-link-escape",
+  "name": "remark-lint-no-pipes-in-links",
   "version": "1.0.0",
   "description": "remark-lint rule to warn when a pipe is present in a link - these need to be escaped",
   "main": "index.js",
@@ -8,25 +8,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/computamike/remark-link-escape.git"
+    "url": "git+https://github.com/computamike/remark-lint-no-pipes-in-links.git"
   },
   "keywords": [
     "remake",
     "lint",
     "rule",
-    "remark-link-escape",
+    "remark-lint-no-pipes-in-links",
     "link",
     "escape"
   ],
   "author": "Mike Hingley <computa_mike@hotmail.com> (https://github.com/computamike)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/computamike/remark-link-escape/issues"
+    "url": "https://github.com/computamike/remark-lint-no-pipes-in-links/issues"
   },
-  "homepage": "https://github.com/computamike/remark-link-escape#readme",
+  "homepage": "https://github.com/computamike/remark-lint-no-pipes-in-links#readme",
   "devDependencies": {
     "jest": "^26.6.3",
     "remark": "^13.0.0",
     "unified-lint-rule": "^1.0.6"
+  },
+  "dependencies": {
+    "unist-util-visit": "^2.0.3"
   }
 }

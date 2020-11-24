@@ -2,7 +2,7 @@
  * @author Mike Hingley
  * @copyright 2020 Mike Hingley
  * @license MIT
- * @module remark-link-escape
+ * @module remark-lint-no-pipes-in-links
  * @fileoverview
  *  Warn when a link has a pipe within a link.
  *  
@@ -35,28 +35,17 @@
 'use strict'
 
 var rule = require('unified-lint-rule')
-
+const visit = require('unist-util-visit');
 module.exports = rule('remark-lint:link-escape', linkEscape)
 
-function matchLineNumber(m) {
-    let line = 1
-    for (let i = 0; i < m.index; i++) {
-      if (m.input[i] == '\n') {
-        line++;
-      }
-    }
-    return line;
-  }
-
 function linkEscape(tree, file, option) {
-    var contents = String(file)
-    const regex = /((\[)(.*)((?<!\/)\|)+(.*)(\]))/gm;
-    let m;
-    while ((m = regex.exec(contents)) !== null) {
-        var x =         matchLineNumber(m)
-        var pos = {
-            line:x,
-        }
-        file.message('link contains an unescaped | ',pos);
-    }  
+  visit(tree, 'link', node => {
+    visit(node, 'text', LinkText =>{
+      const regex = /(?<!\/)\|/g;
+      var result;
+      while (result = regex.exec(LinkText.value)) {
+        file.message('link contains an unescaped | ',node);
+      }
+    })
+  })
 }

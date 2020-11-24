@@ -1,4 +1,4 @@
-# remark-link-escape
+# remark-lint-no-pipes-in-links
 Warn when a link has a pipe within a link.
 see [free-programming-books issue 5176](https://github.com/EbookFoundation/free-programming-books/issues/5176) 
  

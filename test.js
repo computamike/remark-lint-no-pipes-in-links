@@ -10,7 +10,7 @@ const processMarkdown = (md, opts) => {
 
 test.each([
   ["one pipe", ` * [This is a title with a | in](https://unifiedjs.com/)`, 1],
-  ["two pipes",` * [This is a title with a | in](https://unifiedjs.com/)`, 1],
+  ["two pipes",` * [This is a title | with 2 | in](https://unifiedjs.com/)`, 2],
   ["Pipe - no space",` * [This is a title with a|in](https://unifiedjs.com/)`, 1],
 ])('%s', async (name, markdown, number) => {
   var res = await processMarkdown(markdown)
